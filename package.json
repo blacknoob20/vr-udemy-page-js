@@ -1,0 +1,19 @@
+{
+  "name": "aprendiendo-webpack",
+  "version": "1.0.0",
+  "description": "Este es un cascaron de un proyecto en webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/blacknoob20/webpack-ini.git"
+  },
+  "author": "Cristhian R. Guerrero Soto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blacknoob20/webpack-ini/issues"
+  },
+  "homepage": "https://github.com/blacknoob20/webpack-ini#readme"
+}
