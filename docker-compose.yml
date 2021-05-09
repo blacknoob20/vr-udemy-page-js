@@ -3,8 +3,10 @@ services:
   php:
     container_name: webpack
     image: node:alpine
-    cpuset: '1'
+    #cpuset: '1'
     mem_limit: 512m
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
     volumes:
       - $PWD/:/root/webpack
     networks:
