@@ -19,6 +19,7 @@
   "homepage": "https://github.com/blacknoob20/webpack-ini#readme",
   "devDependencies": {
     "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.1",
     "webpack": "^5.36.2",
     "webpack-cli": "^4.7.0"
   }
