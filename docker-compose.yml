@@ -1,0 +1,15 @@
+version: '2.2'
+services:
+  php:
+    container_name: webpack
+    image: node:alpine
+    cpuset: '1'
+    mem_limit: 512m
+    volumes:
+      - $PWD/:/root/webpack
+    networks:
+      - net
+    ports:
+      - '80:80'
+networks:
+  net:
