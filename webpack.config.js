@@ -3,6 +3,13 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
+  devServer: {
+    // contentBase: path.join(__dirname, 'dist'),
+    contentBase: './dist',
+    compress: true,
+    host: '0.0.0.0',
+    port: 8080,
+  },
   module: {
     rules: [
       {
@@ -18,6 +25,7 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
   plugins: [new HtmlWebpackPlugin()],//[new HtmlWebpackPlugin({template:'../scr/index.html', filename:''})]
 };
