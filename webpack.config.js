@@ -1,4 +1,5 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpack = require('html-webpack-plugin');
+const MiniCssExtract = require('mini-css-extract-plugin');
 const path = require('path');
 
 module.exports = {
@@ -14,7 +15,12 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
+        exclude: /styles.css$/,
         use: ["style-loader", "css-loader"],
+      },
+      { 
+        test: /style.css$/, //Este es para copiar el archivo a la capeta dist con el plugin mini-css-extract-plugin
+        use: [MiniCssExtract.loader, 'css-loader'],
       },
       {
         test: /\.html$/i,
@@ -31,5 +37,8 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
-  plugins: [new HtmlWebpackPlugin()],//[new HtmlWebpackPlugin({template:'../scr/index.html', filename:''})]
+  plugins: [
+    new HtmlWebpack(),//[new HtmlWebpack({template:'../scr/index.html', filename:''})]
+    new MiniCssExtract(),//new MiniCssExtract({filename: 'nuevo-estilo.css', ignoreOrder: false})
+  ],
 };
