@@ -14,6 +14,13 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.html$/i,
+        loader: 'html-loader',
+        options: {
+          minimize: false,
+        },
+      },
+      {
         test: /\.css$/i,
         exclude: /styles.css$/,
         use: ['style-loader', 'css-loader'],
@@ -23,11 +30,13 @@ module.exports = {
         use: [MiniCssExtract.loader, 'css-loader'],
       },
       {
-        test: /\.html$/i,
-        loader: 'html-loader',
-        options: {
-          minimize: false,
-        },
+        test: /\.(png|jpe?g|gif)$/i,
+        // loader: 'file-loader',
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
       },
     ],
   },
