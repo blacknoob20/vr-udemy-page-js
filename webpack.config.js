@@ -1,5 +1,6 @@
 const HtmlWebpack = require('html-webpack-plugin');
 const MiniCssExtract = require('mini-css-extract-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 const path = require('path');
 
 module.exports = {
@@ -50,6 +51,12 @@ module.exports = {
     new HtmlWebpack(),
     // new HtmlWebpack({template:'../scr/index.html', filename:''}),
     // new MiniCssExtract(),
-    new MiniCssExtract({filename: 'nuevo-estilo.css', ignoreOrder: false})
+    new MiniCssExtract({filename: 'nuevo-estilo.css', ignoreOrder: false}),
+    new CopyPlugin({
+      patterns: [
+        { from: "src/assets/", to: "assets/" },
+        // { from: "other", to: "public" },
+      ],
+    }),
   ],
 };
