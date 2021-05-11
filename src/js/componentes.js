@@ -1,4 +1,6 @@
-const saludar = (nombre) =>{
+import '../css/componentes.css';
+
+export const saludar = (nombre) =>{
     console.log('Creando etiqueta H1');
 
     const h1 = document.createElement('h1');
