@@ -4,7 +4,7 @@ services:
     container_name: webpack
     image: node:alpine
     #cpuset: '1'
-    mem_limit: 512m
+    #mem_limit: 512m
     stdin_open: true # docker run -i
     tty: true        # docker run -t
     volumes:
