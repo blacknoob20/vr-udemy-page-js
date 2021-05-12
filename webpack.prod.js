@@ -1,10 +1,18 @@
 const HtmlWebpack = require('html-webpack-plugin');
 const MiniCssExtract = require('mini-css-extract-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+const CssMinimizer = require('css-minimizer-webpack-plugin');
 const path = require('path');
 
 module.exports = {
   mode: 'production',
+  entry: './src/index.js',
+  output: {
+    filename: 'main.[fullhash].js',
+    path: path.resolve(__dirname, 'dist'),
+    clean: true,
+  },
   devServer: {
     // contentBase: path.join(__dirname, 'dist'),
     contentBase: './dist',
@@ -41,11 +49,12 @@ module.exports = {
       },
     ],
   },
-  entry: './src/index.js',
-  output: {
-    filename: 'main.[fullhash].js',
-    path: path.resolve(__dirname, 'dist'),
-    clean: true,
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin(),
+      new CssMinimizer(),
+    ],
   },
   plugins: [
     new HtmlWebpack(),
