@@ -67,8 +67,8 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpack(),
-    // new HtmlWebpack({template:'../scr/index.html', filename:''}),
+    // new HtmlWebpack(),
+    new HtmlWebpack({template:'./src/index.html', filename:'./index.html'}),
     // new MiniCssExtract(),
     new MiniCssExtract({filename: '[name].[fullhash].css', ignoreOrder: false}),
     new CopyPlugin({

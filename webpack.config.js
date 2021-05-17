@@ -48,8 +48,8 @@ module.exports = {
     clean: true,
   },
   plugins: [
-    new HtmlWebpack(),
-    // new HtmlWebpack({template:'../scr/index.html', filename:''}),
+    // new HtmlWebpack(),
+    new HtmlWebpack({template:'./src/index.html', filename:'./index.html'}),
     // new MiniCssExtract(),
     new MiniCssExtract({filename: 'nuevo-estilo.css', ignoreOrder: false}),
     new CopyPlugin({
