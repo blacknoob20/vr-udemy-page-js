@@ -1,7 +1,7 @@
 const HtmlWebpack = require('html-webpack-plugin');
 const MiniCssExtract = require('mini-css-extract-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
-const path = require('path');
+// const path = require('path');
 
 module.exports = {
   mode: 'development',
@@ -15,13 +15,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.html$/i,
-        loader: 'html-loader',
-        options: {
-          minimize: false,
-        },
-      },
-      {
         test: /\.css$/i,
         exclude: /styles.css$/,
         use: ['style-loader', 'css-loader'],
@@ -31,11 +24,24 @@ module.exports = {
         use: [MiniCssExtract.loader, 'css-loader'],
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.html$/i,
+        loader: 'html-loader',
+        options: {
+          minimize: false,
+        },
+      },
+      {
+        // test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(jpe?g|png|gif|svg)$/i,
         // loader: 'file-loader',
         use: [
           {
             loader: 'file-loader',
+            options: {
+              esModule: false,
+              name: '[name].[ext]',
+              outputPath: "assets/img",
+            }
           },
         ],
       },
@@ -44,14 +50,15 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
+    // path: path.resolve(__dirname, 'dist'),
     clean: true,
+    // publicPath: '/',
   },
   plugins: [
     // new HtmlWebpack(),
     new HtmlWebpack({template:'./src/index.html', filename:'./index.html'}),
     // new MiniCssExtract(),
-    new MiniCssExtract({filename: 'nuevo-estilo.css', ignoreOrder: false}),
+    new MiniCssExtract({filename: 'estilo.css', ignoreOrder: false}),
     new CopyPlugin({
       patterns: [
         { from: "src/assets/", to: "assets/" },

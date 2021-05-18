@@ -39,11 +39,15 @@ module.exports = {
         use: [MiniCssExtract.loader, 'css-loader'],
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        // test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(jpe?g|png|gif|svg)$/i,
         // loader: 'file-loader',
         use: [
           {
             loader: 'file-loader',
+            options: {
+              name: 'assets/img/[name].[ext]'
+            }
           },
         ],
       },
