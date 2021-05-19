@@ -74,6 +74,26 @@ body
 
 }
 
+.bx-wrapper, .bx-viewport{
+    height: 250px !important;
+}
+
+#img-gamer1{
+   content: url("./assets/img/gamer1.jpg");
+}
+#img-gamer2{
+   content: url("./assets/img/gamer2.jpg");
+}
+#img-gamer3{
+   content: url("./assets/img/gamer3.jpg");
+}
+
+/* #img-gamer1, #img-gamer2, #img-gamer3{
+    width: 100%;
+    height: 220px;
+    display: inline-block;
+}  */
+
 #posts{
     width: 60%;
     float: left;
@@ -135,7 +155,7 @@ body
     padding: 5px;
 }
 
-#sidebar img, img:after{
+.img-about, img-about:after{
     content:url("./assets/img/user.png");
     /* width: 220px; */
     width: 100%;
