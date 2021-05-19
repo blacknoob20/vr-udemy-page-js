@@ -1,6 +1,25 @@
 import './styles.css';
 import "../node_modules/bxslider/dist/jquery.bxslider.css";
 
+const selTheme = document.querySelector('#select-theme');
+
+require("./css/green.css");
+
+selTheme.addEventListener('click',(evt)=>{
+    switch (evt.target.getAttribute('id')) {
+        case 'to-red':
+            require("./css/red.css");    
+            break;
+        case 'to-green':
+            require("./css/green.css");
+            break;
+        case 'to-blue':
+            require("./css/blue.css");
+            break;
+    }
+});
+
+
 // Initialize the slider
 $('.bxslider').bxSlider();
 

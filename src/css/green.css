@@ -1,0 +1,35 @@
+body
+{
+    background-image: url('../assets/img/forest.green.jpg');
+}
+
+#logo{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    letter-spacing: 4px;
+    background-color: #235E3D;
+    color: white;
+    text-align: center;
+    width: 385px;
+    height: 80px;
+    float: left;
+    margin-bottom: 20px;
+    line-height: 80px;
+}
+
+#menu ul li:hover{
+    background-color: #235E3D;
+}
+
+.button-more{
+    padding: 15px;
+    background-color: #235E3D;
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: block;
+    width: 70px;
+    font-size: 14px;
+    text-align: center;
+}
