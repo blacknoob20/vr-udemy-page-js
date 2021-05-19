@@ -55,3 +55,33 @@ posts.forEach(post => {
 });
 
 document.querySelector('#posts').append(div);
+
+const lnkSubir = document.querySelector('.subir');
+
+lnkSubir.addEventListener('click',()=>{
+    $('html, body').animate({
+        scrollTop: 0,
+    }, 500);
+});
+
+const frm = document.querySelector('#login form');
+let userName;
+
+frm.addEventListener('submit',()=>{
+    userName = document.querySelector('#name').value;
+    localStorage.setItem('name',userName);
+});
+
+userName = localStorage.getItem('name');
+
+if(userName){
+    const loginHtml = document.querySelector('#about p');
+
+    loginHtml.innerHTML = `Bienvenido, ${userName}`;
+    loginHtml.innerHTML += '<br><a href="#" id="logout">Cerrar sesion</a>';
+    document.querySelector('#login').style = 'display: none;';
+    document.querySelector('#logout').addEventListener('click',()=>{
+        localStorage.clear();
+        window.location.reload();
+    });
+}
